@@ -1,0 +1,132 @@
+import os
+os.system('cls')
+from prettytable import PrettyTable
+
+print("=============================================")
+print("Nama     : Fitriani                          ")
+print("NIM      : 2309116021                        ")
+print("Kelas    : Sistem Informasi A23              ")
+print("Tema     : Manajement Inventaris Toko Sepatu ")
+print("=============================================")
+print("*****Hallo Selamat Datang Di Toko Sepatu Helen, Selamat Berbelanja:)*****")
+
+class Barang_sepatu:
+    def __init__(self, kode, nama, merek, ukuran, harga, stok):
+        self.kode = kode
+        self.nama = nama
+        self.merek = merek
+        self.ukuran = ukuran
+        self.harga = harga
+        self.stok = stok
+
+    def tampilkan_barang(self):
+        print(f"Kode: {self.kode}, Nama: {self.nama}, Merek: {self.merek}, Ukuran: {self.ukuran}, Harga: {self.harga}, Stok: {self.stok}")
+
+class Inventaris_Sepatu:
+    def __init__(self):
+        self.list_sepatu = [
+            Barang_sepatu("01", "Sepatu Olahraga", "Nike", "42", 500000, 12),
+            Barang_sepatu("02", "Sepatu Casual", "Adidas", "40", 400000, 2),
+            Barang_sepatu("03", "Sepatu Formal", "New Balance", "36", 300000, 8),
+            Barang_sepatu("04", "Sepatu Pentofel", "Clarks", "39", 350000, 5),
+            Barang_sepatu("05", "Sepatu Lari", "Birkenstock", "38", 600000, 9),
+        ]
+
+    def Tambah_Sepatu(self, kode, nama, merek, ukuran, harga, stok):
+        if not all([kode, nama, merek, ukuran, harga, stok]):
+            print("Input tidak boleh kosong. Silakan coba lagi.")
+            return
+        Sepatu_baru = Barang_sepatu(kode, nama, merek, ukuran, harga, stok)
+        self.list_sepatu.append(Sepatu_baru)
+        print("Selamat, Sepatu Berhasil Ditambahkan. ")
+
+    def Tampilkan_Barang(self):
+        if not self.list_sepatu:
+            print("Inventaris atau Daftar Sepatu Kosong")
+            
+        table = PrettyTable(["Kode", "Nama", "Merek", "Ukuran", "Harga", "Stok"])
+        for sepatu in self.list_sepatu:
+            table.add_row([sepatu.kode, sepatu.nama, sepatu.merek, sepatu.ukuran, sepatu.harga, sepatu.stok])
+        print(table)
+
+    def Update_Barang(self, kode, nama_baru, merek_baru, ukuran_baru, harga_baru, stok_baru):
+        if not all([kode, nama_baru, merek_baru, ukuran_baru, harga_baru, stok_baru]):
+            print("Input tidak boleh kosong. Silakan coba lagi.")
+            return
+
+        for sepatu in self.list_sepatu:
+            if sepatu.kode == kode :
+                sepatu.nama = nama_baru
+                sepatu.merek = merek_baru
+                sepatu.ukuran = ukuran_baru
+                sepatu.harga = harga_baru
+                sepatu.stok = stok_baru
+                print("Inventaris Baru Berhasil Diupdate.")
+                return
+        print("Sepatu Dengan Kode Tersebut Tidak Ditemukan.") 
+
+    def Hapus_Sepatu(self, kode):
+        for sepatu in self.list_sepatu:
+            if sepatu.kode == kode:
+                self.list_sepatu.remove(sepatu)
+                print("Selamat Sepatu Dari Kode Tersebut Berhasil Dihapus")
+                return
+        print("Sepatu Dengan Kode Tersebut Tidak Ditemukan")
+
+def main():
+    Inventaris = Inventaris_Sepatu()
+    while True:
+        print("============================================")
+        print("                   Menu:                    ")
+        print("1. Tambah Sepatu Baru                       ")
+        print("2. Tampilkan Inventaris/Daftar Sepatu       ")
+        print("3. Update Data Sepatu                       ")
+        print("4. Hapus Data Sepatu                        ")
+        print("5. Keluar                                   ")
+        print("============================================")
+        opsi = input("Masukkan Opsi Anda: ")
+
+        if opsi == "1":
+            while True:
+                kode = input("Masukkan Kode Sepatu: ")
+                nama = input("Masukkan Nama Sepatu: ")
+                merek = input("Masukkan Merek Sepatu: ")
+                ukuran = input("Masukkan Ukuran Sepatu: ")
+                harga = input("Masukkan Harga Sepatu: ")
+                stok = input("Masukkan Stok Sepatu: ")
+                if all([kode, nama, merek, ukuran, harga, stok]):
+                    break
+                else:
+                    print("Input tidak boleh kosong. Silakan coba lagi.")
+            Inventaris.Tambah_Sepatu(kode, nama, merek, ukuran, harga, stok)
+
+        elif opsi == "2":
+            Inventaris.Tampilkan_Barang()
+
+        elif opsi == "3":
+            while True:
+                kode = input("Masukkan kode sepatu yang ingin diupdate: ")
+                nama = input("Masukkan nama sepatu yang ingin diupdate: ")
+                merek = input("Masukkan merek baru: ")
+                ukuran = input("Masukkan ukuran baru: ")
+                harga = input("Masukkan harga baru: ")
+                stok = input("Masukkan stok baru: ")
+                if all([kode, nama, merek, ukuran, harga, stok]):
+                    break
+                else:
+                    print("inputan tidak boleh kosong, silahkan coba lagi")
+            Inventaris.Update_Barang(kode, nama, merek, ukuran, harga, stok)
+
+        elif opsi == "4":
+            kode = input("Masukkan kode sepatu yang ingin dihapus: ")
+            Inventaris.Hapus_Sepatu(kode)
+
+        elif opsi == "5":
+            print("Terimakasih Telah Berbelanja")
+            break
+
+        else:
+            print("Pilihan tidak valid. Silakan coba lagi.")
+
+main()
+
