@@ -18,7 +18,6 @@ class Barang_sepatu:
         self.ukuran = ukuran
         self.harga = harga
         self.stok = stok
-
     def tampilkan_barang(self):
         print(f"Kode: {self.kode}, Nama: {self.nama}, Merek: {self.merek}, Ukuran: {self.ukuran}, Harga: {self.harga}, Stok: {self.stok}")
 
