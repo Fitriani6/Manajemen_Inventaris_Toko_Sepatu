@@ -1,5 +1,5 @@
 # Manajemen_Inventaris_Toko_Sepatu
-Penjelasaan Output
+Penjelasaan Output Lingked List
 
 ![Cuplikan layar 2024-03-03 125720](https://github.com/Fitriani6/Manajemen_Inventaris_Toko_Sepatu/assets/144803436/f0a1eba2-45a5-4828-9ad4-ec1c9eebbe65)
 
