@@ -6,10 +6,10 @@ print("=============================================")
 print("Nama     : Fitriani                          ")
 print("NIM      : 2309116021                        ")
 print("Kelas    : Sistem Informasi A23              ")
-print("Tema     : Manajement Inventaris Toko Sepatu ")
+print("Tema     : Manajemen Inventaris Toko Sepatu  ")
 print("=============================================")
 print("*****Hallo Selamat Datang Di Toko Sepatu Helen, Selamat Berbelanja:)*****")
-#Double Linked List
+
 
 class Barang_sepatu:
     def __init__(self, kode, nama, merek, ukuran, harga, stok):
@@ -122,6 +122,20 @@ class Inventaris_Sepatu:
             else:
                 print("Gagal menghapus barang.")
 
+    def update_barang(self, kode, nama_baru, merek_baru, ukuran_baru, harga_baru, stok_baru):
+        current = self.head
+        while current:
+            if current.barang.kode == kode:
+                current.barang.nama = nama_baru
+                current.barang.merek = merek_baru
+                current.barang.ukuran = ukuran_baru
+                current.barang.harga = harga_baru
+                current.barang.stok = stok_baru
+                print("Barang berhasil diperbarui.")
+                return
+            current = current.next
+        print("Barang dengan kode tersebut tidak ditemukan.")
+
     def tampilkan_inventaris(self):
         if not self.head:
             print("Inventaris kosong")
@@ -145,8 +159,9 @@ def main():
         print("4. Hapus Sepatu di Awal                     ")
         print("5. Hapus Sepatu di Akhir                    ")
         print("6. Hapus Sepatu di Tengah                   ")
-        print("7. Tampilkan Inventaris/Daftar Sepatu       ")
-        print("8. Keluar                                   ")
+        print("7. Update Data Sepatu                       ")
+        print("8. Tampilkan Inventaris/Daftar Sepatu       ")
+        print("9. Keluar                                   ")
         print("============================================")
         opsi = input("Masukkan Opsi Anda: ")
 
@@ -192,9 +207,18 @@ def main():
             inventaris.hapus_sepatu_di_tengah(posisi)
 
         elif opsi == "7":
-            inventaris.tampilkan_inventaris()
+            kode = input("Masukkan Kode Sepatu yang akan diperbarui: ")
+            nama_baru = input("Masukkan Nama Baru: ")
+            merek_baru = input("Masukkan Merek Baru: ")
+            ukuran_baru = input("Masukkan Ukuran Baru: ")
+            harga_baru = input("Masukkan Harga Baru: ")
+            stok_baru = input("Masukkan Stok Baru: ")
+            inventaris.update_barang(kode, nama_baru, merek_baru, ukuran_baru, harga_baru, stok_baru)
 
         elif opsi == "8":
+            inventaris.tampilkan_inventaris()
+
+        elif opsi == "9":
             print("Terimakasih Telah Berbelanja")
             break
 
