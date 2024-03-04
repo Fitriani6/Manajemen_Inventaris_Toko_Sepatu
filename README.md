@@ -31,7 +31,7 @@ Penjelasaan Output Lingked List
    
 ![Cuplikan layar 2024-03-04 160839](https://github.com/Fitriani6/Manajemen_Inventaris_Toko_Sepatu/assets/144803436/77af588b-041a-4ee2-9367-ce6dc6aa4d83)
 
-8. Ketujuh pilihan(7) adalah untuk mengupdate barang atau sepatu, dimana akan diminta untuk memasukkan kode sepatu yang ingin di update kemudian setelah memilih kode sepatu maka akan memasukan nama, merek, ukuran, harga, stok baru.
+8. Ketujuh pilihan(7) adalah untuk mengupdate barang atau sepatu, dimana akan diminta untuk memasukkan kode sepatu yang ingin di update kemudian setelah memilih kode sepatu maka akan memasukan nama, merek, ukuran, harga, stok baru. dan pilihan(8) adalah menampilkan daftar sepatu.
    
 ![Cuplikan layar 2024-03-04 160855](https://github.com/Fitriani6/Manajemen_Inventaris_Toko_Sepatu/assets/144803436/ca34b47f-7db8-4f76-8c13-349f34f9b6f7)
    
