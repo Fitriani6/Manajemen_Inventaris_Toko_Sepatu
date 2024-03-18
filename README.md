@@ -1,5 +1,5 @@
 # Manajemen_Inventaris_Toko_Sepatu
-Penjelasaan Output Lingked List
+Penjelasaan Output jump_search
 
 ![Cuplikan layar 2024-03-18 140204](https://github.com/Fitriani6/Manajemen_Inventaris_Toko_Sepatu/assets/144803436/ae11aa2f-dd4c-4f07-bcec-f2d5c87d3363)
 
@@ -39,7 +39,7 @@ Penjelasaan Output Lingked List
 
 ![Cuplikan layar 2024-03-18 140630](https://github.com/Fitriani6/Manajemen_Inventaris_Toko_Sepatu/assets/144803436/2c92b203-1095-461a-8deb-e420e355721f)
 
-10. Kesembilan (9) adalah sorting didalam menu sorting atau cari barang bisa memilih mau sorting kode atau nama sepatu namun sebelum sorting nama atau kode , kode atau nama barang harus di urutkan terlebih dahulu agar dapat di sorting. masukan angka 1/2 (kode/nama) yang mau disorting dan masukkan nama jika ingin sorting nama.
+10. Kesembilan (9) adalah serching didalam menu serching atau cari barang bisa memilih mau serching kode atau nama sepatu namun sebelum serching nama atau kode , kode atau nama barang harus di urutkan terlebih(sorting) dahulu agar dapat di serching. masukan angka 1/2 (kode/nama) yang mau disorting dan masukkan nama jika ingin serching nama.
    
 ![Cuplikan layar 2024-03-04 160855](https://github.com/Fitriani6/Manajemen_Inventaris_Toko_Sepatu/assets/144803436/ca34b47f-7db8-4f76-8c13-349f34f9b6f7)
    
